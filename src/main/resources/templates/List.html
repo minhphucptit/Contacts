@@ -1,11 +1,12 @@
 <!DOCTYPE HTML>
 <html xmlns:th="http://www.thymeleaf.org">
 <head th:fragment="head">
-    <title>Getting Started: Serving Web Content</title>
+    <title>Contacts</title>
     <meta charset="UTF-8">
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
 </head>
 <body>
+<a th:href="@{/contact/add}">New Contact</a>
 <th:block th:if="${#lists.isEmpty(contacts)}">
  <h1>Contacts is empty!</h1>
 </th:block>
@@ -28,8 +29,8 @@
            <td th:text="${contact.email}"></td>
            <td th:text="${contact.address}"></td>
            <td>
-             <a th:href="@{/edit?id=${contact.id}}">Edit</a><span>|</span>
-             <a th:href="@{/delete?id=${contact.id}}">Delete</a>
+             <a th:href="@{/contact/{id}/edit(id=${contact.id})}">Edit</a><span>|</span>
+             <a th:href="@{/contact/{id}/delete(id=${contact.id})}">Delete</a>
            </td>
         </tr>
        </thead>

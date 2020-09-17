@@ -28,7 +28,12 @@ public class UserContact {
 	   this.email=email;
 	   this.address=address;
    }
-   
+   public void setId(int id) {
+	   this.id = id;
+   }
+   public Integer getId() {
+	   return id;
+   }
    public void setName(String name) {
 	   this.name = name;
    }
